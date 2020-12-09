@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="helloworld.css" />
+</head>
+<body>
+  <input type="text" value="Hello World" id="input_text" disabled>
+  <button id="input_btn">edit</button>
+  <script>
+    let inputBtn = document.querySelector('#input_btn')
+    let inputText = document.querySelector('#input_text')
+
+
+    const modifyInput = (e) => {
+      let doneBtnClick = () => { 
+      inputBtn.innerText = 'edit';
+      inputText.disabled = true;
+      }
+
+      let editBtnClick = () => {
+      inputBtn.innerText = 'done';
+      inputText.disabled = false;
+      }
+      
+      if (inputBtn.innerText === 'edit') {
+        editBtnClick()
+      } else {
+        doneBtnClick()
+      }
+    }
+    console.dir(inputText)
+
+    inputBtn.addEventListener('click', modifyInput)
+
+  </script>
+</body>
+</html>
